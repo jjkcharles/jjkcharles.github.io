@@ -1,5 +1,5 @@
 #theme: jekyll-theme-yat
-remote-theme: "jeffreytse/jekyll-theme-yat"
+remote_theme: "jeffreytse/jekyll-theme-yat"
 
 translate_langs: []
 banner: "/assets/images/banner.png"
