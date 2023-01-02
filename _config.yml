@@ -1,1 +1,15 @@
-theme: minima
+theme: jekyll-theme-yat
+
+translate_langs: []
+banner: "/assets/images/banner.png"
+
+header_pages:
+  - index.html
+  - about.html
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-spaceship
