@@ -2,6 +2,7 @@
 remote_theme: "jeffreytse/jekyll-theme-yat"
 
 translate_langs: []
+title: jjk_charles
 banner: "/assets/images/banner.png"
 
 header_pages:
