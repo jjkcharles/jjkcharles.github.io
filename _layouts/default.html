@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include views/header.html -%}
+
+    {%- include views/banner.html -%}
+
+    {%- include extensions/hashlocate.html -%}
+
+    {%- include extensions/theme-toggle.html -%}
+
+    {%- include extensions/click-to-top.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include views/footer.html -%}
+  
+  {% if jekyll.environment == "production" %}
+  <!-- Default Statcounter code for My Personal Blog https://jjkcharles.github.io/ -->
+  <script type="text/javascript">
+    var sc_project=12832274; 
+    var sc_invisible=1; 
+    var sc_security="3f75b791"; 
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12832274/0/3f75b791/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade">
+      </a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+  {% endif %}
+
+  </body>
+</html>
