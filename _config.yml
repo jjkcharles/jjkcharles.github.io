@@ -7,6 +7,7 @@ banner: "/assets/images/banner.png"
 
 header_pages:
   - index.html
+#  - lists.html
   - about.html
 
 plugins:
