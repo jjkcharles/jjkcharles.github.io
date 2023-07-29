@@ -4,7 +4,7 @@ title: RestCountries.Net
 subtitle: Offline access to all the countries
 author: jjk_charles
 categories: explorations
-tags: blog dotnet
+tags: dotnet explorations
 sidebar: []
 ---
 
