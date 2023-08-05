@@ -3,8 +3,8 @@ layout: post
 title: Tackling SQL Compatibility
 subtitle: Solving an 'Update' Query Mystery in MS SQL & PostgreSQL
 author: jjk_charles
-categories: explorations
-tags: dotnet explorations
+categories: programming
+tags: sql postgresql
 sidebar: []
 ---
 
