@@ -38,11 +38,13 @@ And, it did work out the way I anticipated!
 Below is how I did it on Windows and Android. 
 
 #### Windows
-Go to `Settings->Network & internet->Wi-Fi->Manage Known Networks`
+~~Go to `Settings->Network & internet->Wi-Fi->Manage Known Networks`~~
 
-And, choose the target "public" wifi network. Flip the "Metered Connection" toggle to ON.
+~~And, choose the target "public" wifi network. Flip the "Metered Connection" toggle to ON.~~
 
 ![Windows Wifi Settings](https://i.postimg.cc/FKhhvWSK/image.png "Windows Wifi Settings - Windows 11")
+
+> <span style="color:red;bold">**Update 05th July 2023:**</span> I noticed that I am still occasionally getting connected to the connection I had set as "metered". So, obviously above settings isn't working with Windows. I ended up choosing unchecking "Connect automatically when in range" setting. Minor setback, but something I can live with!
 
 #### Android
 Depending on your Android flavor, go to `Internet->Saved Networks` and choose your target network.
