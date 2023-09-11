@@ -1,5 +1,5 @@
 #theme: jekyll-theme-yat
-remote_theme: "jeffreytse/jekyll-theme-yat"
+remote_theme: "jeffreytse/jekyll-theme-yat@3c6242f"
 
 translate_langs: []
 title: jjk_charles
