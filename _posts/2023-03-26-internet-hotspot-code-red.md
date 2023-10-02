@@ -5,7 +5,6 @@ subtitle: A minor inconvenience and the tiny little hack!
 author: jjk_charles
 categories: tips
 tags: tips mobile internet
-sidebar: []
 ---
 
 Just a couple days after [I thought I had it all figured out with my mobile internet situation]({% post_url 2023-03-17-internet-hotspot %}), I started running into a problem.

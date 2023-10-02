@@ -5,7 +5,6 @@ subtitle: My choice between Pocket Casts and Google Podcasts
 author: jjk_charles
 categories: tips
 tags: podcast apps  
-sidebar: []
 ---
 
 I recently was on the hunt for alternatives to [Pocket Casts](https://pocketcasts.com/) for my podcast consumption. While Pocket Casts has proven to be an excellent service and I've pretty happy with their offering, things didn't go all that well when I started consuming podcasts through my laptop (earlier, I use to consume them only through mobile).

@@ -5,7 +5,6 @@ subtitle: Always ask for the specific version!
 author: jjk_charles
 categories: tips
 tags: blog jekyll  
-sidebar: []
 ---
 
 When I first started this blog using Jekyll, I wasn't really paying close attention to how [remote themes plugin](https://github.com/benbalter/jekyll-remote-theme) work. I guess I was more interested in getting it up and running, and I probably didn't care as long as things worked.

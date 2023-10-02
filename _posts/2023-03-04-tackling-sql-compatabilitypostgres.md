@@ -5,7 +5,6 @@ subtitle: Solving an 'Update' Query Mystery in MS SQL & PostgreSQL
 author: jjk_charles
 categories: programming
 tags: sql postgresql
-sidebar: []
 ---
 
 Over the last few months, our team at work has been busy porting an application developed to work on top of MS SQL & Oracle as data stores to work with PostgreSQL as the data store. While porting the code that interfaces with Oracle proved to be relatively simpler, the MS SQL bit proved to be a difficult one - especially with an `Update` query which was behaving in an unexpected manner when ran in PostgreSQL.  

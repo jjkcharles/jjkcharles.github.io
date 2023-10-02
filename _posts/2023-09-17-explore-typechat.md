@@ -5,7 +5,6 @@ subtitle: Harnessing LLMs for Type-Safe Natural Language processing!
 author: jjk_charles
 categories: explorations
 tags: chatgpt llm explorations  
-sidebar: []
 ---
 
 Ever since Microsoft announced [TypeChat library](https://microsoft.github.io/TypeChat/), I've been eager to try it. Not solely due to the current hype around Large Language Models (LLM), but because it addresses some intriguing challenges that were previously daunting or unwieldy.

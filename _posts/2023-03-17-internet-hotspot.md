@@ -5,7 +5,6 @@ subtitle: A clever(cheap?) way to save double spend on mobile data expense
 author: jjk_charles
 categories: tips
 tags: tips mobile internet
-sidebar: []
 ---
 
 With mobile data plans in US being [among the most expensive](https://www.cable.co.uk/mobiles/worldwide-data-pricing/) across the globe, and my recent need to frequently connect while on the go for work, I have been exploring options (other than Android Hotspot). I wanted a solution that will allow me to perform data-intensive work while away from home without causing a significant dent in my wallet.

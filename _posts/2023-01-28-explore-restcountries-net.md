@@ -5,7 +5,6 @@ subtitle: Offline access to all the countries
 author: jjk_charles
 categories: explorations
 tags: dotnet explorations
-sidebar: []
 ---
 
 Accessing accurate and up-to-date information about countries is essential for various applications. [RestCountries RESTful API](https://restcountries.com/) offers a pretty good way to access the same, so what else can be better than that right? There actually is - what if you could access them all offline, in a [type-safe](https://en.wikipedia.org/wiki/Type_safety) way from within your .Net code!
