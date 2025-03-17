@@ -7,15 +7,15 @@ categories: programming general
 tags: dotnet developer-experience distributed-applications
 ---
 
-With proliferation of Public Cloud usage across the industry, there is a high change you've already been exposed to Distributed Application Development and the challenges it brings especially during local development and testing. While there are tools like Docker Compose that could help ease the pain, its doesn't address all the problems involved.
+With proliferation of Public Cloud usage across the industry, there is a high change you've already been exposed to Distributed Application Development and the challenges it brings especially during local development and testing. While tools like Docker Compose can help ease the pain, they don't address all the problems involved.
 
-All of this is made more complicated when you have to deal with disparate technologies. For instance, within my Team at work, we have to deal with React, .Net, Java and Python for the various UI/API workloads, and then mix of MS SQL, Oracle and Postgres for Databases.
+This becomes even more complicated when dealing with disparate technologies. For instance, within my team at work, we handle React, .NET, Java, and Python for various UI/API workloads, along with a mix of MS SQL, Oracle, and Postgres for databases.
 
 My team has been facing challenges with performing a good integration testing in their local system before pushing their code changes into the main branch, which in turn results in bugs leaking into our integration environment causing wasted efforts from Developers and QAs.
 
 ## .Net Aspire
 
-This is one area where .Net Aspire could greatly help. Aspire helps with lots of things, like, Orchestration of different components, [Integrations](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview#net-aspire-integrations), [Deployments](https://learn.microsoft.com/en-us/dotnet/aspire/deployment/overview) etc. 
+One area where .NET Aspire could greatly help is in orchestration. Aspire assists with various tasks, such as orchestration of different components, [Integrations](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview#net-aspire-integrations), [Deployments](https://learn.microsoft.com/en-us/dotnet/aspire/deployment/overview) etc. 
 
 Since I was dealing with multiple technologies, my primary focus for leveraging Aspire was around the below areas,
 
@@ -30,7 +30,9 @@ Here Aspire allows us to programmatically specify how to spin up the different c
 
 ### Consistent Starting point for integration
 
-While this is not something specific to .Net Aspire, this is one of the major pain points for our team at work, where our QAs had to comb through our Test environment for hours to gather all the test data needed for them to run their test cases. So, the is to not just bring up all componenets needed but also to ensure that every time it happens, all components have standard set of data as starting point for them to work with so that Devs don't have to worry about what data to use for testing during their feature development, as well as integration tests have a static set of data that can be referenced across all these components.
+While this is not something specific to .Net Aspire, this is one of the major pain points for our team at work, where our QAs had to comb through our Test environment for hours to gather all the test data needed for them to run their test cases. 
+
+The goal is not just to bring up all the necessary components, but also to ensure that every time this happens, all components have a standardized set of data as a starting point. This way, developers don’t have to worry about what data to use for testing during feature development, and integration tests can rely on a consistent set of data that is referenced across all components.
 
 ### Local logging and Observability
 
@@ -38,7 +40,7 @@ During the development phase, all developers leverage logging as a tool to help 
 
 ### Integration Testing
 
-The last goal is to be able to run the automated regression test suite within the developer's local machine without having to venture into tedious data collection activity (either automated or manual) every single time the tests are required to be run.
+The final goal is to run the automated regression test suite on the developer's local machine without needing to go through tedious data collection (whether automated or manual) every time the tests are run.
 
 ## Setup
 
@@ -63,7 +65,7 @@ I am not going to be covering the tooling or installation/setup as part of this 
 
 First of all, one of the key things that makes things easier with Aspire is the ability to run containers as part of the orchestration. This is also how some of the out-of-the-box components like PostgreSQL and Elasticsearch are run by Aspire. 
 
-This is where I started running into issues with my org's dev environment setup - I cannot use Docker Desktop due to licensing restrictions - Challenge #1.
+This is where I started running into issues with my org's dev environment setup - I can’t use Docker Desktop due to licensing restrictions—Challenge #1.
 
 As a logical next step, since Aspire supports Podman, I was eager to try it out. Only to find out that the Dev environment was running an older version of windows which cannot install/support Podman - Challenge #2.
 
@@ -100,7 +102,7 @@ I was already aware that I could run any executable via Aspire, using
 
 method. But then, I realized that there is a Community built Java support via [CommunityToolkit.Aspire.Hosting.Java](https://www.nuget.org/packages/CommunityToolkit.Aspire.Hosting.Java/9.2.1).
 
-While I could have achieved similar outcome with AddExecutable, `AddSpringApp()` method from the above Nuget package does make things easier. I did something like below,
+While I could have achieved similar outcome with `AddExecutable()`, `AddSpringApp()` method from the above Nuget package makes things easier. Here's how I approached it:
 
 ```csharp
 var javaApi = builder.AddSpringApp("javaapi", "../Other Dependencies/sampleapi",
@@ -140,7 +142,7 @@ As I had mentioned above, for configuring the Postgres instance, I am injecting 
 
 For my purposes that environment variables used as DB_URL, DB_USERNAME and DB_PASSWORD.
 
-I refered to those within the Java application.properties file as below,
+I referenced them within the Java `application.properties` file like this:
 
 ```properties
 spring.application.name=sampleapi
@@ -160,7 +162,7 @@ Note: Default endpoint name assigned is "http"/"https".
 
 ### Hosting the Database
 
-For the database, I decided to use Containers, so I did something like,
+For the database, I decided to use containers, so I set it up like this:
 
 ```csharp
 var postgresDB = builder.AddPostgres("localPg", pgUsername, port:60123)
@@ -204,8 +206,8 @@ But, for my Java workload I had to take some extra steps (nothing too complex th
 
 ## End Result
 
-You can refer to the above mentioned code in this [GitHub repository](https://github.com/jjkcharles/CrossLanguageAspireApp).
+You can refer to the code mentioned above in this [GitHub repository](https://github.com/jjkcharles/CrossLanguageAspireApp).
 
-I am pretty pleased with what we could achieve with Aspire, and how much time it could help save for Developers and QAs.
+I am pretty pleased with what we could achieve with Aspire, and how much time it could help save for developers and QAs.
 
-If you haven't already taken Aspire for a spin, do give it a try right away!
+If you haven’t already tried Aspire, do give it a spin right away!
