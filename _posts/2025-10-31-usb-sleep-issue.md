@@ -15,9 +15,9 @@ The trigger turned out to be a **USB → 3.5 mm audio adapter**, specifically:
 >
 >    https://www.amazon.com/UGREEN-Adapter-Support-Headphone-Compatible/dp/B08Y8CZB2S
 
----
-
 Unplug the adapter, and sleep worked flawlessly. Plug it back in, and the system would appear to sleep — only to resume a few seconds later.
+
+---
 
 ### Why This Adapter Was in the Setup
 
@@ -33,6 +33,7 @@ The USB adapter seemed like a clean solution:
 * Keep the setup KVM-friendly
 
 Functionally, it worked exactly as intended. Power management, however, was a different story.
+
 ---
 
 ### The Problem
@@ -51,6 +52,7 @@ From the UI:
 At this point, I assumed this would be a fairly common issue with a well-documented fix.
 
 That assumption turned out to be wrong.
+
 ---
 
 ### Initial Analysis (and Dead Ends)
@@ -68,6 +70,7 @@ While there was plenty of generic advice, nothing directly explained a scenario 
 * A single USB device made or broke sleep behavior
 
 Most of what follows was learned during the investigation, not beforehand.
+
 ---
 
 ### Learning the Right Tools Along the Way
@@ -89,6 +92,7 @@ Each answered a different question:
 * Is sleep failing or waking?
 
 None of these were tools I was deeply familiar with before this issue.
+
 ---
 
 ### Verifying Supported Sleep States
@@ -111,6 +115,7 @@ The following sleep states are not available:
 ```
 
 This ruled out Modern Standby entirely and confirmed the system was using classic S3 sleep.
+
 ---
 
 ### The Smoking Gun: Event Logs
@@ -135,6 +140,7 @@ This was the turning point.
 > This wasn’t a wake event — it was a failed sleep transition.
 
 The system never actually reached S3.
+
 ---
 
 ### What Was Actually Happening
@@ -151,6 +157,7 @@ In this case:
 > The UGREEN USB audio adapter failed to suspend cleanly
 > Firmware aborted the transition
 > The system immediately resumed
+
 ---
 
 ### The Fix
@@ -169,6 +176,7 @@ USB settings
 
 * S3 sleep completed successfully
 * The USB adapter no longer caused immediate resume
+
 ---
 
 ### Final Thoughts
